@@ -11,8 +11,8 @@ const Detail = () => {
       <h2>{sign.name}</h2>
       <h4>Element: {sign.element}</h4>
       <h4>Traits: {sign.traits}</h4>
-
-      <Match />
+      {/* MATCH */}
+      {<Match />}
     </div>
   );
 };
