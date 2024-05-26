@@ -3,12 +3,14 @@ import { HoroscopeContext } from "../context/HoroscopeContext";
 
 const Match = () => {
     const [match, setMatch] = useState(false);
-    const { sign: { name, match: signMatch } } = useContext(HoroscopeContext);
+    const { sign } = useContext(HoroscopeContext);
 
     return (
         <>
-            <button onClick={() => setMatch((prevMatch) => !prevMatch)}>{match ? 'Hide Match' : 'Show Match'}</button>
-            {match && name ? <div style={{ marginTop: '2em' }}>{signMatch}</div> : ''}
+            <button onClick={() => setMatch(prevMatch => !prevMatch)}>
+                {match ? 'Hide Match' : 'Show Match'}
+            </button>
+            <div style={{ paddingTop: '1rem' }}>{match && sign.match}</div>
         </>
     )
 }
